@@ -1,0 +1,15 @@
+---
+# This playbook installs and configures cobbler
+
+- name: install epel
+  yum: name=epel-release state=installed
+  become: True
+
+- name: install cobbler packages
+  yum: name={{ item }} state=installed
+  with_items: cobbler_packages
+  become: True
+
+- name: configure cobbler settings
+  template: src=settings.j2 dest=/etc/cobbler/settings backup=yes
+  become: True

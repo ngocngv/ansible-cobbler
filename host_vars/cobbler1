@@ -1,0 +1,10 @@
+---
+# file: host_vars/cobbler1
+
+user: vagrant
+ssh_key: "{{ lookup('file', '/home/mark/.ssh/id_rsa.pub') }}"
+manage_dhcp: yes
+manage_dns: yes
+pxe_just_once: yes
+server: 192.168.33.101
+next_server: 192.168.33.101

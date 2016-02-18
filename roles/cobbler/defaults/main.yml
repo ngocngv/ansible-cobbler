@@ -1,0 +1,8 @@
+---
+cobbler_packages: 
+    - cobbler
+    - cobbler-web
+    - dnsmasq
+    - syslinux
+    - pykickstart
+    - xinetd

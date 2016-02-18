@@ -1,0 +1,10 @@
+
+- name: Run common tasks
+  hosts: cobblers
+  tasks:
+    - include: tasks/common.yml
+
+- name: deploy and setup cobbler server 
+  hosts: cobblers
+  roles:
+      - cobbler
