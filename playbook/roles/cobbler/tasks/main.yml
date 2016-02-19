@@ -1,5 +1,17 @@
 ---
-# This playbook installs and configures cobbler
+# Ansible role to install cobbler - main.yml
+#
+# Copyright (C) 2016  Mark Einon <mark.einon@gmail.com>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License,
+# Version 2.1 only as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
 
 - name: install epel
   yum: name=epel-release state=installed
@@ -13,3 +25,13 @@
 - name: configure cobbler settings
   template: src=settings.j2 dest=/etc/cobbler/settings backup=yes
   become: True
+
+- name: configure cobbler modules.conf
+  template: src=modules.conf.j2 dest=/etc/cobbler/modules.conf backup=yes
+  become: True
+
+- name: configure cobbler dnsmasq.template
+  template: src=dnsmasq.template.j2 dest=/etc/cobbler/dnsmasq.template backup=yes
+  become: True
+
+...

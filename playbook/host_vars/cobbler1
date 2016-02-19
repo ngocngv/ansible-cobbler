@@ -2,9 +2,13 @@
 # file: host_vars/cobbler1
 
 user: vagrant
-ssh_key: "{{ lookup('file', '/home/mark/.ssh/id_rsa.pub') }}"
-manage_dhcp: yes
-manage_dns: yes
-pxe_just_once: yes
+use_ssh_key: False
+ssh_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+manage_dhcp: 1
+manage_dns: 1
+pxe_just_once: 1
 server: 192.168.33.101
 next_server: 192.168.33.101
+dns_module: manage_dnsmasq
+dhcp_module: manage_dnsmasq
+dhcp_range: '192.168.33.100,192.168.33.200'
