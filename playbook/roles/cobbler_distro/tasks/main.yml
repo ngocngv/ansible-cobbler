@@ -14,7 +14,7 @@
 #
 
 - name: mount the cdrom present in the machine's drive (virtual or otherwise)
-  mount: name=/media/ src=/dev/sr0 fstype=iso9660 opts=ro state=present
+  mount: name=/media/ src=/dev/sr0 fstype=iso9660 opts=ro state=mounted
   become: True
 
 - name: import distro into cobbler
