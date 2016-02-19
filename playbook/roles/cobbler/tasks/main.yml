@@ -34,4 +34,21 @@
   template: src=dnsmasq.template.j2 dest=/etc/cobbler/dnsmasq.template backup=yes
   become: True
 
+- name: configure cobbler dhcp.template
+  template: src=dhcp.template.j2 dest=/etc/cobbler/dhcp.template backup=yes
+  become: True
+
+- name: configure tftp settings
+  template: src=tftp.j2 dest=/etc/xinetd.d/tftp backup=yes
+  become: True
+
+- name: restart services (httpd, cobblerd, xinetd)
+  service: name={{ item }} state=restarted enabled=yes
+  with_items: cobbler_services
+  become: True
+
+- name: sync cobbler
+  command: cobbler sync
+  become: True
+
 ...

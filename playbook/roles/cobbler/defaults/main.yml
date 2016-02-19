@@ -21,4 +21,9 @@ cobbler_packages:
     - pykickstart
     - xinetd
 
+cobbler_services:
+    - httpd
+    - cobblerd
+    - xinetd
+
 ...
