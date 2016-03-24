@@ -1,4 +1,4 @@
-# ansible-cobbler
+# **ansible-cobbler**
 
 An ansible playbook for installing cobbler on Centos7, complete with a vagrant VM setup to test.
 
@@ -13,7 +13,7 @@ An ansible playbook for installing cobbler on Centos7, complete with a vagrant V
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
 
-Prerequisites:
+**Prerequisites:**
 
 * Host Linux OS (Fedora 23 used to create this system), with:
     - ansible and vagrant packages installed
@@ -21,12 +21,12 @@ Prerequisites:
 
 * Downloaded CentOS 7 'Everything' ISO. (https://www.centos.org/download/) available on the Host
 
-To run:
+**To run:**
 
 * run ./setup.sh and follow the instructions at the end
-* run ./install_test_distro.sh and follwo the instructions at the end
+* run ./install_test_distro.sh and follow the instructions at the end
 
-To test the cobbler VM setup works:
+**To test the cobbler VM setup works:**
 
 * Create a new VirtualBox test VM with default disk size of 8GB
 * Set the test VM to boot from the network (PXE boot)
