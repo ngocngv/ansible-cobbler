@@ -26,4 +26,7 @@ cobbler_services:
     - cobblerd
     - xinetd
 
+dns_module: manage_dnsmasq
+dhcp_module: manage_dnsmasq
+
 ...

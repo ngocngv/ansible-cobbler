@@ -3,18 +3,21 @@
 
 user: vagrant
 use_ssh_key: False
+disable_selinux: True
 ssh_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 manage_dhcp: 1
 manage_dns: 1
 pxe_just_once: 1
 server: 192.168.33.101
 next_server: 192.168.33.101
-dns_module: manage_dnsmasq
-dhcp_module: manage_dnsmasq
 dhcp_range_start: 192.168.33.100
 dhcp_range_end: 192.168.33.200
 
+distro_mnt: /media
 distro_name: CentOS-7
+distro_iso: /dev/sr0
+distro_arch: x86_64
+system_name: centos7
 kickstart_path: CentOS-7.ks
 pxe_mac: 08:00:27:A2:FB:85
 pxe_ip: 192.168.33.105
